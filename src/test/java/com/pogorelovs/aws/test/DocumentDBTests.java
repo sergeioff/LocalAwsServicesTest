@@ -21,9 +21,9 @@ public class DocumentDBTests {
     private final Logger logger = LoggerFactory.getLogger(DocumentDBTests.class);
 
     /**
-     //     * DocumentDB is compatible with mongo 3.6
-     //     * Details: https://docs.aws.amazon.com/documentdb/latest/developerguide/functional-differences.html
-     //     */
+     * DocumentDB is compatible with mongo 3.6
+     * Details: https://docs.aws.amazon.com/documentdb/latest/developerguide/functional-differences.html
+     */
     @Rule
     public final MongoDBContainer documentDBContainer = new MongoDBContainer("mongo:3.6.0");
 
