@@ -36,6 +36,7 @@ public class DocumentDBTests {
             Files.list(Paths.get("db-init")).forEach(collectionPath -> {
                 String collectionName = collectionPath.getFileName().toString();
                 MongoCollection<Document> collection = testDatabase.getCollection(collectionName);
+
                 try {
                     List<String> lines = Files.lines(collectionPath).collect(Collectors.toUnmodifiableList());
 
@@ -49,8 +50,6 @@ public class DocumentDBTests {
                 }
 
                 logger.info("Number of documents in {} : {}", collectionName, collection.countDocuments());
-
-
             });
         } catch (IOException e) {
             logger.error("Failed to access file: ", e.getCause());
